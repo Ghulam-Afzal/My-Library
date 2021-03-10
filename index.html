@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="input-form" id="form">
+        <form class="input-form2">
+            <span class="close-form">&times;</span>
+            <div class="flex">
+                <input placeholder="Book Title" type="text" name="book" id="title" required>
+                <input placeholder="Author of Book" type="text" name="author" id="author" required>
+                <input placeholder="Number of Pages" type="number" name="pages" id="pages" required>
+                <select name="status">
+                    <option value="Read">Read</option>
+                    <option value="Not Read">Not Read</option>
+                </select>
+                <button id="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <nav class='navbar'>
+        <span class="nav-toggle" id="js-nav-toggle">
+            <i class="fa fa-bars"></i>
+        </span>
+        <a href='#' class="logo">My Library</a>
+        <ul class="main-nav" id='js-menu'>
+            <li>
+                <a href="#" class="nav-links">Home</a>
+            </li>
+            <li>
+                <a href="#" class="nav-links">Sign Up</a>
+            </li>
+            <li>
+                <a href="#" class="nav-links">Login</a>
+            </li>
+            <li>
+                <a href="#" class="nav-links">Github</a>
+            </li>
+        </ul>
+    </nav>
+    <div>
+        <h3>ADD NEW BOOK TO THE LIBRARY</h3>
+        <button id="new-book">Add New Book</button>
+    </div>
+    <div class="container"></div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

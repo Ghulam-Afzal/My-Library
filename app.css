@@ -1,0 +1,255 @@
+
+body {
+     background: #231942; 
+     text-align: center;
+}
+
+.input-form { 
+  display: none;
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: auto;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+  
+}
+
+.flex { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 6em auto;
+}
+.input-form2 { 
+    background-color: #9F86C0;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 50vh;
+
+}
+
+.close-form {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-form:hover,
+  .close-form:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+select { 
+    margin: 1em 1em 1em 1em ;
+}
+
+#author { 
+    margin: 1em 1em 1em 1em ;
+}
+
+#pages { 
+    margin: 1em 1em 1em 1em ;
+}
+
+#title { 
+    margin: 1em 1em 1em 1em ;
+}
+
+#submit { 
+    height: 2em;
+    cursor: pointer;
+}
+
+#submit:hover { 
+    background: lightgray;
+    border: none;
+}
+
+.container { 
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.book-card { 
+    width: 25vh; 
+    height: 25vh;
+    background: #5E548E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1em 1em 1em 1em ;
+    border: solid black 1px;
+    border-radius: 5%;
+}
+
+.book-title { 
+    width: 15vh;
+    margin: .5em .5em .5em .5em;
+    border: solid white 1px; 
+  
+}
+
+.book-author { 
+    width: 15vh;
+    margin: .5em .5em .5em .5em;
+    border: solid white 1px; 
+
+}
+
+.book-pages { 
+    width: 15vh;
+    margin: .5em .5em .5em .5em;
+    border: solid white 1px; 
+   
+}
+
+.book-read-status { 
+    background: #9F86C0;
+    display: inline-block;
+    width: 75px;
+    height: 25px;
+    margin: 1.5em .5em 1em .5em;
+    padding: 4px 8px;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    cursor: pointer; 
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+}
+
+
+.remove { 
+    background: #9F86C0;
+    display: inline-block;
+    width: 75px;
+    height: 25px;
+    margin: 1.5em .5em 1em .5em;
+    padding: 4px 8px;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    cursor: pointer; 
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+}
+
+h3 { 
+    color: white; 
+}
+
+#new-book { 
+    background: white;
+    margin: 0em .5em 1em .5em;
+    padding: 4px 8px;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    cursor: pointer; 
+}
+
+/*  nav bar  */
+.navbar { 
+    font-size: 12px; 
+    background: black; 
+    border: 1px solid rgba(0, 0, 0, 0.2); 
+    padding-bottom: 10px; 
+}
+
+.main-nav { 
+    list-style-type: none;
+    display: none; 
+}
+
+.nav-links, .logo { 
+    text-decoration: none; 
+    color: rgba(255, 255, 255, 0.7); 
+}
+
+.main-nav li { 
+    text-align: center; 
+    margin: 10px auto; 
+}
+
+.logo { 
+    display: inline-block; 
+    font-size: 22px; 
+    margin-top: 5px; 
+    margin-left: 20px; 
+}
+
+.nav-toggle { 
+    position: absolute;
+    top: 10px; 
+    right: 20px; 
+    cursor: pointer; 
+    color: rgba(255,255,255,0.7); 
+    font-size: 24px; 
+    font-size: 25px; 
+}
+
+.active { 
+    display: block; 
+}
+
+@media screen and (min-width : 768px) { 
+
+    .navbar { 
+        display: flex; 
+        justify-content: space-between; 
+        padding-bottom: 0; 
+        height: 43px;
+        align-items: center; 
+    }
+
+    .main-nav { 
+        display: flex; 
+        margin-right: 30px; 
+        flex-direction: row; 
+        justify-content: flex-end; 
+    }
+
+    .main-nav li { 
+        margin: 0; 
+    }
+
+    .nav-links { 
+        margin-left: 40px; 
+    }
+
+    .logo { 
+        margin-top: 0; 
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .logo:hover, .nav-links:hover { 
+        color: rgba(255, 255, 255, 1)
+    }
+}
+
