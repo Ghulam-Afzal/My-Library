@@ -7,6 +7,7 @@ const container = document.querySelector('.container');
 const formShow = document.querySelector('#form'); 
 const newBook = document.querySelector('#new-book'); 
 const formClose = document.querySelector('.close-form'); 
+const emptyLocalStorage = document.querySelector('#clear-local-strage'); 
 
 
 
@@ -20,6 +21,7 @@ function Book(title, author, pages, readStatus) {
     this.readStatus = readStatus;
 }
 
+
 // set up the on submit 
 submit.addEventListener('click', e => {
     e.preventDefault(); 
@@ -32,7 +34,7 @@ const addBookToLib = () => {
     const book = new Book(title.value, author.value, pages.value, select.value); 
     myLib.push(book); 
     renderBooks(book); 
-
+    addToLocalStorage(book); 
 
     // reset the input values 
     title.value = "";
@@ -89,6 +91,8 @@ const renderBooks = book => {
         const index = bookCard.getAttribute('container-num')
         myLib.splice(index, 1); 
         bookCard.remove(); 
+        removeFromLocalStorage(book); 
+      
     })
     // on click of the read status button change the text of it between : read || not read 
     bookReadStatus.addEventListener('click', () => {
@@ -103,8 +107,6 @@ const renderBooks = book => {
     });
 };
 
-// const book = new Book('lo', 'me', '195 pages', 'not read'); 
-// console.log(book.report())
 
 // add new button to make form pop up 
 newBook.addEventListener('click', () => { 
@@ -129,3 +131,57 @@ let navBarToggle = document.querySelector('#js-nav-toggle');
 navBarToggle.addEventListener('click', () => { 
     mainNav.classList.toggle('active'); 
 })
+
+
+// local storage funstions 
+
+// adds to the local sotrage 
+const addToLocalStorage = book => { 
+    let storage = JSON.parse(window.localStorage.getItem('booksLocal'));
+    if (storage !== null){ 
+        storage.push(book); 
+        window.localStorage.setItem('booksLocal', JSON.stringify(storage));
+    }else { 
+        storage = []; 
+        storage.push(book); 
+        window.localStorage.setItem('booksLocal', JSON.stringify(storage));
+    }
+
+}
+
+// adds to the 
+const renderFromLocalStroage = () => { 
+    let books = JSON.parse(window.localStorage.getItem('booksLocal')); 
+    for (let i = 0; i < books.length; i++){ 
+        renderBooks(books[i]); 
+    }
+    console.log(books); 
+}
+
+const clearLocalStorage = () => { 
+    window.localStorage.clear(); 
+}
+
+const removeFromLocalStorage = book => { 
+    let storage = JSON.parse(window.localStorage.getItem('booksLocal')); 
+    for (let i = 0; i < storage.length; i++){ 
+         if (storage[i].title === book.title){ 
+            storage.splice(i, 1); 
+         }
+    }
+    window.localStorage.setItem('booksLocal', JSON.stringify(storage));
+    console.log('works'); 
+}
+
+// button that clears the local storage 
+emptyLocalStorage.addEventListener('click', () => { 
+    clearLocalStorage();
+})
+
+// check if local sotrage id empty or not 
+if (window.localStorage.length > 0) { 
+    renderFromLocalStroage(); 
+    console.log(window.localStorage.length) 
+}else {
+    console.log('Local Storage is empty')
+}

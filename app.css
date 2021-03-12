@@ -77,6 +77,16 @@ select {
     border: none;
 }
 
+#clear-local-strage { 
+    background: white;
+    margin: 0em .5em 1em .5em;
+    padding: 4px 8px;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    cursor: pointer; 
+}
+
 .container { 
     display: flex;
     justify-content: space-evenly;
@@ -100,21 +110,21 @@ select {
 .book-title { 
     width: 15vh;
     margin: .5em .5em .5em .5em;
-    border: solid white 1px; 
+    /* border: solid white 1px;  */
   
 }
 
 .book-author { 
     width: 15vh;
     margin: .5em .5em .5em .5em;
-    border: solid white 1px; 
+    /* border: solid white 1px;  */
 
 }
 
 .book-pages { 
     width: 15vh;
     margin: .5em .5em .5em .5em;
-    border: solid white 1px; 
+    /* border: solid white 1px;  */
    
 }
 
@@ -136,7 +146,6 @@ select {
         -ms-user-select: none; 
             user-select: none; 
 }
-
 
 .remove { 
     background: #9F86C0;
